@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+
   devise_for :users
-  #devise_for :models
-  resources :tasks
+  resources :tasks do
+    resources :messages, only: [:index, :show]
+  end
 
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.

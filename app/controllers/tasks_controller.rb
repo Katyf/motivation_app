@@ -21,7 +21,7 @@ class TasksController < ApplicationController
 
   # POST /tasks
   def create
-    @task = Task.new(tester_params)
+    @task = Task.new(task_params)
 
     respond_to do |format|
       if @task.save

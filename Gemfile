@@ -35,13 +35,37 @@ gem 'bootstrap-sass', '~> 3.3.3'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+
   gem 'byebug'
 
-  # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
+gem 'newrelic_rpm'
+gem 'rack-cors'
+gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
+gem 'nokogiri'
+group :development, :test do
+  gem 'capybara'
+  gem 'rubocop'
+  gem 'bullet'
+  gem 'lol_dba'
+  gem 'dotenv-rails'
+  gem 'rspec-rails', '~> 3.1.0'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'faker'
+  gem 'codeclimate-test-reporter', require: nil
+end
+group :development do
+  gem 'guard'
+  gem 'guard-rails'
+end
+group :production do
+  gem 'unicorn'
+  gem 'rails_12factor'
+  gem 'rails_stdout_logging'
+  gem 'rails_serve_static_assets'
+end

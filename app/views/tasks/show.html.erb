@@ -1,0 +1,12 @@
+<h1>
+<%= @task.name %>
+</h1>
+<p> Due By:
+<%= @task.due_by %>
+</p>
+<p> Estimated time:
+<%= @task.est_time%>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %> |

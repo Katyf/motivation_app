@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe TasksController do
   let(:valid_attributes) {
-    { name: 'Something to do', due_by: 'sometime', est_time: 'num hours', status: 'incomplete'}
+    { name: 'Something to do', due_by: 'sometime', est_time: 'num hours', status: 1 }
   }
 
   let(:invalid_attributes) {

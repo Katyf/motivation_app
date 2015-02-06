@@ -7,5 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Task.delete_all
 
-Task.create!(name: 'Do this Thing')
-Task.create!(name: 'Second Assignment')
+Task.create!(name: 'Do this Thing', due_by: 'a time', est_time: '1 hour', status: 1)
+Task.create!(name: 'Second Assignment', due_by: '4pm', est_time: '10 hour', status: 9)

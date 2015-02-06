@@ -15,7 +15,7 @@ RSpec.describe Task do
     end
 
     it 'is valid with all params' do
-      expect(Task.create(name: 'Something to do', due_by: 'sometime', est_time: 'num hours', status: 'complete')).to be_valid
+      expect(Task.create(name: 'Something to do', due_by: 'sometime', est_time: 'num hours', status: 1)).to be_valid
     end
   end
 end

@@ -4,68 +4,83 @@ require 'database_cleaner'
 RSpec.feature 'Managing tasks' do
   scenario 'List all tasks' do
     user = FactoryGirl.create(:user)
-    user.confirmed_at = Time.now
-    user.save
+    login_as(user, :scope => :user)
 
-    task.create!(name: 'athing', due_by: "atime", est_time: 'anhour', status: 1)
-    task.create!(name: 'athing', due_by: "atime", est_time: 'anhour', status: 1)
-    task.create!(name: 'athing', due_by: "atime", est_time: 'anhour', status: 1)
+    Task.create!(name: 'athing', due_by: 'atime', est_time: 'anhour', status: 1)
+    Task.create!(name: 'athing', due_by: 'atime', est_time: 'anhour', status: 1)
+    Task.create!(name: 'athing', due_by: 'atime', est_time: 'anhour', status: 1)
 
     visit '/tasks'
 
-    expect(page).to have_content 'tasks'
+    expect(page).to have_content 'Tasks'
     # expect(page).to have_selector 'p', count: 3
     Warden.test_reset!
   end
 
   scenario 'Create an task' do
     user = FactoryGirl.create(:user)
-    user.confirmed_at = Time.now
-    user.save
+    login_as(user, :scope => :user)
 
     visit '/tasks/new'
 
-    fill_in 'name', with: 'athing'
-    fill_in 'due_by', with: "atime."
-    click_on 'Create task'
+    fill_in 'Name', with: 'athing'
+    fill_in 'Due by', with: 'atime'
+    fill_in 'Est time', with: 'anhour'
+    fill_in 'Status', with: 1
+    click_on 'Create Task'
 
     expect(page).to have_content(/success/i)
 
     Warden.test_reset!
   end
 
-  # scenario 'Read an task' do
+  scenario 'Read an task' do
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user)
 
+    task = Task.create!(name: 'athing', due_by: "atime", est_time: 'anhour', status: 1)
 
-  #   task = task.create!(name: 'athing', due_by: "atime", est_time: 'anhour', status: 1)
+    visit "/tasks/#{task.id}"
 
-  #   visit "/tasks/#{task.id}"
+    expect(page.find('h1')).to have_content 'athing'
+    expect(page).to have_content "atime"
 
-  #   expect(page.find('h1')).to have_content 'athing'
-  #   expect(page).to have_content "atime."
-  # end
+    Warden.test_reset!
+  end
 
-  # scenario 'Update an task' do
-  #   task = task.create!(name: 'One Stupid Trick', due_by: "atime.")
+  scenario 'Update an task' do
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user)
 
-  #   visit "tasks/#{task.id}/edit"
+    task = Task.create!(name: 'notherthing', due_by: 'nothertime', est_time: 'anhour', status: 1)
 
-  #   fill_in 'name', with: 'notherthing'
-  #   fill_in 'due_by', with: 'nothertime'
-  #   click_on 'Update task'
+    visit "tasks/#{task.id}/edit"
 
-  #   expect(page).to have_content(/success/i)
-  #   expect(page.find('h1')).to have_content 'notherthing'
-  #   expect(page).to have_content 'nothertime'
-  # end
+    fill_in 'Name', with: 'notherthing'
+    fill_in 'Due by', with: 'nothertime'
+    fill_in 'Est time', with: 'anhour'
+    fill_in 'Status', with: 1
+    click_on 'Update Task'
 
-  # scenario 'Delete an task' do
-  #   task = task.create!(name: 'athing', due_by: "atime", est_time: 'anhour', status: 1)
+    expect(page).to have_content(/success/i)
+    expect(page).to have_content 'notherthing'
+    expect(page).to have_content 'nothertime'
 
-  #   visit "tasks/#{task.id}/edit"
+    Warden.test_reset!
+  end
 
-  #   click_on 'Delete task'
+  scenario 'Delete an task' do
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user)
 
-  #   expect(page).to have_content(/success/i)
-  # end
+    task = Task.create!(name: 'athing', due_by: "atime", est_time: 'anhour', status: 1)
+
+    visit "/tasks/#{task.id}/edit"
+
+    click_on 'Delete'
+
+    expect(page).to have_content(/success/i)
+
+    Warden.test_reset!
+  end
 end

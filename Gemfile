@@ -58,6 +58,7 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'
   gem 'faker'
   gem 'codeclimate-test-reporter', require: nil
+  gem 'database_cleaner'
 end
 group :development do
   gem 'guard'

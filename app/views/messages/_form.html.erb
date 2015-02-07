@@ -1,0 +1,10 @@
+<%= form_for [@task, @message] do |f| %>
+
+  <div class="field">
+    <%= f.label :body_text %><br>
+    <%= f.text_field :body_text %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -4,7 +4,6 @@ class CreateTasks < ActiveRecord::Migration
       t.string :name
       t.string :due_by
       t.string :est_time
-      t.integer :status
 
       t.timestamps null: false
     end

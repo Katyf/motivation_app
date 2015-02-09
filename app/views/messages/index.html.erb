@@ -1,15 +1,3 @@
 <p id="notice"><%= notice %></p>
 <h1>Messages</h1>
-<tbody>
-    <% @messages.each do |message| %>
-      <tr>
-        <td><%= message.body_text %></td><br>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
-<div class="button">
-<%= link_to 'New Task', new_task_path %>
-</div>

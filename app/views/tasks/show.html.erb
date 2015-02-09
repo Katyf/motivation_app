@@ -9,10 +9,7 @@
 <p> Estimated time:
 <%= @task.est_time %>
 </p>
-<p> Status:
-<%= @task.status %>
-</p>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %> |
-<%= link_to 'Motivate Me', task_messages_path(@task.id)%>
+<%= link_to 'Whats your status', task_points_path(@task.id)%>

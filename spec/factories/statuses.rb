@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :message do
+  factory :status do
     
   end
 

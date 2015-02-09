@@ -2,9 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :tasks do
-    # resources :statuses, only [:index, :show] do
-      resources :messages#, only [:index, :show]
-      # end
+      resources :messages
   end
 
   root 'welcome#index'

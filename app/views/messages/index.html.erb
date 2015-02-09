@@ -1,3 +1,7 @@
 <p id="notice"><%= notice %></p>
-<h1>Messages</h1>
 
+<h1>
+    <% @messages.each do |message| %>
+      <%= message.body %>
+    <% end %>
+</h1>

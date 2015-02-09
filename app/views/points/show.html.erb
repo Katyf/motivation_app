@@ -1,4 +1,6 @@
 <h1>Showing Status</h1>
 <p id="notice"><%= notice %></p>
 
-<p><%= @point.statpoint %>0%</p>
+<p>You are <%= @point.statpoint %>0% done...</p>
+
+ <%= link_to 'Motivate Me', task_point_messages_path(@task, @point) %>

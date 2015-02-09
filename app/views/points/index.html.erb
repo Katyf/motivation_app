@@ -2,16 +2,12 @@
 
 <h1> You have ___ left to complete. What's your status? </h1>
 
-<p>
     <% @points.each do |point| %>
-      <%= point.statpoint %>
+      <% point.statpoint %>
+      <%= link_to point.statpoint, task_point_path(@task, point) %>
     <% end %>
-</p>
 
 <br>
-<div class="button">
-<%= link_to 'Motivate Me', messages_path %>
-</div>
 <br>
 <div class="button">
 <%= link_to 'New Task', new_task_path %>

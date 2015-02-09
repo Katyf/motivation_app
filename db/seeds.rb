@@ -23,3 +23,7 @@ Point.create!(statpoint: 7)
 Point.create!(statpoint: 8)
 Point.create!(statpoint: 9)
 Point.create!(statpoint: 10)
+
+Message.delete_all
+
+Message.create!(body: 'Get your shit together, Carol')

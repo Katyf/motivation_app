@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  before_action :set_point
+
   def index
     @messages = Message.all
   end
@@ -38,8 +40,8 @@ class MessagesController < ApplicationController
   end
 
   private
-    def set_message
-      @message = Message.find(params[:id])
+    def set_point
+      @point = Point.find(params[:point_id])
     end
 
     def message_params

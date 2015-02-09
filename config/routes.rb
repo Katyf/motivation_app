@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :messages
+
   resources :tasks do
-    resources :points
+    resources :points do
+      resources :messages
+    end
   end
 
   root 'welcome#index'

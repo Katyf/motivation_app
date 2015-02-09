@@ -25,7 +25,7 @@ require 'database_cleaner'
 
     visit "/tasks/#{@task.id}/points/#{@point.id}"
 
-    expect(page).to have_content "Get your shit together, Carol"
+    expect(page).to have_content "0%"
 
     Warden.test_reset!
   end

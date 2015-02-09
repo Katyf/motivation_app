@@ -2,7 +2,11 @@
 
 <h1> You have ___ left to complete. What's your status? </h1>
 
-<%= Point.all %>
+<p>
+    <% @points.each do |point| %>
+      <%= point.statpoint %>
+    <% end %>
+</p>
 
 <br>
 <div class="button">

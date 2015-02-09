@@ -1,1 +1,14 @@
-<h1>Status Page</h1>
+<p id="notice"><%= notice %></p>
+
+<h1> You have ___ left to complete. What's your status? </h1>
+
+<%= Point.all %>
+
+<br>
+<div class="button">
+<%= link_to 'Motivate Me', messages_path %>
+</div>
+<br>
+<div class="button">
+<%= link_to 'New Task', new_task_path %>
+</div>

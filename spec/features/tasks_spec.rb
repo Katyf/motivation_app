@@ -6,9 +6,9 @@ RSpec.feature 'Managing tasks' do
     user = FactoryGirl.create(:user)
     login_as(user, :scope => :user)
 
-    Task.create!(name: 'athing', due_by: 'atime', est_time: 'anhour', status: 1)
-    Task.create!(name: 'athing', due_by: 'atime', est_time: 'anhour', status: 1)
-    Task.create!(name: 'athing', due_by: 'atime', est_time: 'anhour', status: 1)
+    Task.create!(name: 'athing', due_by: 'atime', est_time: 'anhour')
+    Task.create!(name: 'athing', due_by: 'atime', est_time: 'anhour')
+    Task.create!(name: 'athing', due_by: 'atime', est_time: 'anhour')
 
     visit '/tasks'
 
@@ -26,7 +26,7 @@ RSpec.feature 'Managing tasks' do
     fill_in 'Name', with: 'athing'
     fill_in 'Due by', with: 'atime'
     fill_in 'Est time', with: 'anhour'
-    fill_in 'Status', with: 1
+
     click_on 'Create Task'
 
     expect(page).to have_content(/success/i)
@@ -38,7 +38,7 @@ RSpec.feature 'Managing tasks' do
     user = FactoryGirl.create(:user)
     login_as(user, :scope => :user)
 
-    task = Task.create!(name: 'athing', due_by: "atime", est_time: 'anhour', status: 1)
+    task = Task.create!(name: 'athing', due_by: "atime", est_time: 'anhour')
 
     visit "/tasks/#{task.id}"
 
@@ -52,14 +52,14 @@ RSpec.feature 'Managing tasks' do
     user = FactoryGirl.create(:user)
     login_as(user, :scope => :user)
 
-    task = Task.create!(name: 'notherthing', due_by: 'nothertime', est_time: 'anhour', status: 1)
+    task = Task.create!(name: 'notherthing', due_by: 'nothertime', est_time: 'anhour')
 
     visit "tasks/#{task.id}/edit"
 
     fill_in 'Name', with: 'notherthing'
     fill_in 'Due by', with: 'nothertime'
     fill_in 'Est time', with: 'anhour'
-    fill_in 'Status', with: 1
+
     click_on 'Update Task'
 
     expect(page).to have_content(/success/i)
@@ -73,7 +73,7 @@ RSpec.feature 'Managing tasks' do
     user = FactoryGirl.create(:user)
     login_as(user, :scope => :user)
 
-    task = Task.create!(name: 'athing', due_by: "atime", est_time: 'anhour', status: 1)
+    task = Task.create!(name: 'athing', due_by: "atime", est_time: 'anhour')
 
     visit "/tasks/#{task.id}/edit"
 

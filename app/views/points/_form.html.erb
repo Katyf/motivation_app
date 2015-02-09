@@ -1,0 +1,11 @@
+<%= form_for [@task, @point] do |f| %>
+
+  <div class="field">
+    <%= f.label :statpoint %><br>
+    <%= f.text_field :statpoint %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,7 @@
+<h1>Edit</h1>
+
+<%= render 'form' %>
+
+<%= button_to 'Delete', @task, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Show', task_points_path(@task.id) %> |
+<%= link_to 'Back', tasks_path %>

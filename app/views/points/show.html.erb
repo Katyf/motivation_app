@@ -3,4 +3,4 @@
 
 <p>You are <%= @point.statpoint %>0% done...</p>
 
- <%= link_to 'Motivate Me', point_messages_path(@point, @message) %>
+ <%= link_to 'Motivate Me', point_messages_path(@point, @message.id) %>

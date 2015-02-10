@@ -28,10 +28,7 @@ ActiveRecord::Schema.define(version: 20150209205742) do
 
   create_table "points", force: :cascade do |t|
     t.integer "statpoint"
-    t.integer "task_id"
   end
-
-  add_index "points", ["task_id"], name: "index_points_on_task_id", using: :btree
 
   create_table "tasks", force: :cascade do |t|
     t.string   "name"
@@ -60,5 +57,4 @@ ActiveRecord::Schema.define(version: 20150209205742) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "messages", "points"
-  add_foreign_key "points", "tasks"
 end

@@ -1,11 +1,10 @@
 class PointsController < ApplicationController
-  before_action :set_task
+  before_action :set_point, only: [:show, :edit, :update, :destroy]
   def index
     @points = Point.all
   end
 
   def show
-    @point = Point.find(params[:id])
   end
 
   def new
@@ -14,25 +13,22 @@ class PointsController < ApplicationController
 
   def create
     @point = Point.new(point_params)
-    @point.task = Task.find(params[:task_id])
+
     if @point.save
       flash[:success] = 'point successfully created.'
-      redirect_to task_points_path(@point.task.id)
+      redirect_to @point
     else
       redirect_to root_path
     end
   end
 
   def edit
-    @point = @task.points.find(params[:id])
   end
 
   def update
-
-    @point = @task.point.find(params[:id])
     if @point.update_attributes(point_params)
       flash[:success] = 'point successfully updated.'
-      redirect_to task_points_path(@task)
+      redirect_to point_path(@point)
     else
       render :edit
     end
@@ -46,8 +42,8 @@ class PointsController < ApplicationController
   end
 
 private
-  def set_task
-    @task =Task.find(params[:task_id])
+  def set_point
+    @point = Point.find(params[:id])
   end
 
   def point_params

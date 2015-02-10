@@ -12,18 +12,17 @@ Task.create!(name: 'Second Assignment', due_by: '4pm', est_time: '10 hrs')
 
 Point.delete_all
 
-Point.create!(statpoint: 0)
-Point.create!(statpoint: 1)
-Point.create!(statpoint: 2)
-Point.create!(statpoint: 3)
-Point.create!(statpoint: 4)
-Point.create!(statpoint: 5)
-Point.create!(statpoint: 6)
-Point.create!(statpoint: 7)
-Point.create!(statpoint: 8)
-Point.create!(statpoint: 9)
-Point.create!(statpoint: 10)
+zero = Point.create!(statpoint: 0)
+one = Point.create!(statpoint: 1)
+two = Point.create!(statpoint: 2)
+three = Point.create!(statpoint: 3)
+four = Point.create!(statpoint: 4)
+five = Point.create!(statpoint: 5)
+six = Point.create!(statpoint: 6)
+seven = Point.create!(statpoint: 7)
+eight = Point.create!(statpoint: 8)
+nine = Point.create!(statpoint: 9)
+ten = Point.create!(statpoint: 10)
 
-Message.delete_all
-
-Message.create!(body: 'Get your shit together, Carol')
+zero_message = zero.messages.create!(body: "You haven't even started yet? Get going already!", photo_url: 'http://i.dailymail.co.uk/i/pix/2013/09/26/article-2432922-18472EF100000578-249_634x346.jpg')
+one_message = one.messages.create!(body: 'Get your shit together, Carol', photo_url: 'https://38.media.tumblr.com/fa86163a0279bd02cf75cca4592896c4/tumblr_mr6s41sG2P1qdp7h2o1_400.gif')

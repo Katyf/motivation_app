@@ -2,25 +2,20 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
-  # GET /tasks
   def index
     @tasks = Task.all
   end
 
-  # GET /tasks/1
   def show
   end
 
-  # GET /testers/new
   def new
     @task = Task.new
   end
 
-  # GET /tasks/1/edit
   def edit
   end
 
-  # POST /tasks
   def create
     @task = Task.new(task_params)
 
@@ -31,7 +26,6 @@ class TasksController < ApplicationController
     end
   end
 
-  # PATCH /tasks/1
   def update
     if @task.update_attributes(task_params)
       redirect_to task_path(@task), notice: 'Task successfully updated.'
@@ -40,7 +34,6 @@ class TasksController < ApplicationController
     end
   end
 
-  # DELETE /tasks/1
   def destroy
     Task.find(params[:id]).destroy
     redirect_to tasks_path, notice: 'Task successfully deleted.'

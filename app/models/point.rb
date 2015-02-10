@@ -1,6 +1,6 @@
 class Point < ActiveRecord::Base
-  belongs_to :task
-  has_many :messages
+  has_one :message
+  accepts_nested_attributes_for :message
 
   validates :statpoint, presence: true
 end

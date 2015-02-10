@@ -2,15 +2,15 @@
 
 
 
-<h1> You  have ____ left to complete. </h1>
+<h1> You  have <%= Chronic.parse('today') %> left to complete. </h1>
 
     <% @points.each do |point| %>
       <% point.statpoint %>
-      <%= link_to point.statpoint, task_point_path(@task, point) %>
+      <%= link_to point.statpoint, point %>
     <% end %>
 
 <br>
 <br>
 <div class="button">
-<%= link_to 'New Task', new_task_path %>
+<%= link_to 'Back', :back %>
 </div>

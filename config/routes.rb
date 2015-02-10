@@ -2,10 +2,10 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :tasks do
-    resources :points do
-      resources :messages
-    end
+  resources :tasks
+
+  resources :points do
+    resources :messages
   end
 
   root 'welcome#index'

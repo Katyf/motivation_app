@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20150209205742) do
 
   create_table "messages", force: :cascade do |t|
     t.text     "body"
+    t.string   "photo_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "point_id"

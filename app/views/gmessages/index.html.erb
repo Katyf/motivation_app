@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+    <% @gmessages.each do |message| %>
+      <%= message.body %>
+    <% end %>
+</h1>

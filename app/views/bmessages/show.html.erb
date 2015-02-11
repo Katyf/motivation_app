@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+<%= @bmessage.body %>
+</h1>
+<%= image_tag@bmessage.photo_url %>
+
+<h1>Made any progress yet?</h1>
+<%= link_to 'Update your status', points_path %>

@@ -11,20 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209205742) do
+ActiveRecord::Schema.define(version: 20150211233345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "messages", force: :cascade do |t|
-    t.text     "body"
+  create_table "bmessages", force: :cascade do |t|
+    t.string   "body"
     t.string   "photo_url"
+    t.integer  "point_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "point_id"
   end
 
-  add_index "messages", ["point_id"], name: "index_messages_on_point_id", using: :btree
+  add_index "bmessages", ["point_id"], name: "index_bmessages_on_point_id", using: :btree
+
+  create_table "gmessages", force: :cascade do |t|
+    t.string   "body"
+    t.string   "photo_url"
+    t.integer  "point_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "gmessages", ["point_id"], name: "index_gmessages_on_point_id", using: :btree
 
   create_table "points", force: :cascade do |t|
     t.integer "statpoint"
@@ -57,5 +67,6 @@ ActiveRecord::Schema.define(version: 20150209205742) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "messages", "points"
+  add_foreign_key "bmessages", "points"
+  add_foreign_key "gmessages", "points"
 end

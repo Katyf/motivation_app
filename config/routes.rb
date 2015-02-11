@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   resources :tasks
 
   resources :points do
-    resources :messages
+    resources :bmessages
+    resources :gmessages
   end
 
   root 'welcome#index'

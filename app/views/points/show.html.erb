@@ -4,13 +4,10 @@
 <p>You are <%= @point.statpoint %>% done...</p>
 
 
-  <p><%= @point.message.body %></p><br>
-  <img src='<%= @point.message.photo_url %>'>
-
-<% if @current_user.good_cop? %>
-     <%= @point.good_message.body %>
-     <img src='<%= @point.good_message.photo_url %>'>
+<% if current_user.good_cop? %>
+     <%= @point.gmessage.body %>
+     <img src='<%= @point.gmessage.photo_url %>'>
 <% else %>
-     <%= @point.bad_message.body %>
-     <img src='<%= @point.bad_message.photo_url %>'>
+     <%= @point.bmessage.body %>
+     <img src='<%= @point.bmessage.photo_url %>'>
 <% end %>

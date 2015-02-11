@@ -27,6 +27,8 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'devise'
 gem 'chronic', '~> 0.10.2'
 gem 'time_diff', '~> 0.3.0'
+gem 'google-webfonts-rails', '~> 0.0.4'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

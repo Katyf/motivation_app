@@ -1,13 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 
+<h1>Progress</h1>
+<p>What's the status of your task?</p>
 
-<h1> You  have <%= Chronic.parse('today') %> left to complete. </h1>
+<div>
+<img class = 'gif' src = 'http://media.giphy.com/media/lXiRtipU3IhXitYVG/giphy.gif'>
+</div>
 
-    <% @points.each do |point| %>
-      <% point.statpoint %>
-      <%= link_to point.statpoint, point %>
-    <% end %>
+<p class="lg">
+  <% @points.each do |point| %>
+    <% point.statpoint %> __
+    <%= link_to point.statpoint, point %>%
+  <% end %>
+</p>
+
+
 
 <br>
 <br>

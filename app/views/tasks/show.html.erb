@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+
+<h1> You have <%= Time.diff(Chronic.parse(@task.due_by), Chronic.parse('today'), '%d and %h:%m') %> left to complete. </h1>
+
 <h1>
 <%= @task.name %>
 </h1>
@@ -9,6 +12,7 @@
 <p> Estimated time:
 <%= @task.est_time %>
 </p>
+
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %> |

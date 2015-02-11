@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  get 'mode' => 'cop#mode_options'
+  post 'mode' => 'cop#set_mode'
+
   resources :tasks
 
   resources :points do

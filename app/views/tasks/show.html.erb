@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 
-<h1> You have <%= Time.diff(Chronic.parse(@task.due_by), Chronic.parse('today'), '%d and %h:%m') %> left to complete. </h1>
+<h1> You have <%= Time.diff(Chronic.parse(@task.due_by), Chronic.parse('today'), '%d and %h:%m')[:diff] %> left to complete. </h1>
+
+
 
 <h1>
 <%= @task.name %>

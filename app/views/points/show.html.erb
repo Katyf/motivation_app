@@ -3,8 +3,7 @@
 
 <p>You are <%= @point.statpoint %>% done...</p>
 
-<% if @point.message  %>
+
   <p><%= @point.message.body %></p><br>
   <img src='<%= @point.message.photo_url %>'>
-<% end %>
 

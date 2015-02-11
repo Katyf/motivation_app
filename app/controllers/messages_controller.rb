@@ -18,6 +18,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
+    @message.point = Point.find(params[:point_id])
 
     if @message.save
      redirect_to @message, notice: 'message was successfully created.'
@@ -45,6 +46,6 @@ class MessagesController < ApplicationController
     end
 
     def message_params
-      params.require(:message).permit(:body)
+      params.require(:message).permit(:body, :photo_url)
     end
 end

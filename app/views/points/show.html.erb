@@ -1,6 +1,10 @@
 <h1>Showing Status</h1>
 <p id="notice"><%= notice %></p>
 
-<p>You are <%= @point.statpoint %>0% done...</p>
+<p>You are <%= @point.statpoint %>% done...</p>
 
- <%= link_to 'Motivate Me', point_messages_path(@point, @message) %>
+<% if @point.message  %>
+  <p><%= @point.message.body %></p><br>
+  <img src='<%= @point.message.photo_url %>'>
+<% end %>
+

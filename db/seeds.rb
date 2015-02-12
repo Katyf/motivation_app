@@ -3,7 +3,7 @@ Point.destroy_all
 Gmessage.destroy_all
 Bmessage.destroy_all
 
-Task.create!(name: 'Do this Thing', due_by: 'a time', est_time: '1 hour')
+Task.create!(name: 'Do this Thing', due_by: 'friday', est_time: '1 hour')
 Task.create!(name: 'Second Assignment', due_by: '4pm', est_time: '10 hrs')
 
 zero = Point.create!(statpoint: 0)
@@ -55,7 +55,7 @@ ten.bmessage = message10
 
 # Good Message Seeds
 
-goodmessage0 = Gmessage.create!(body: "Ground zero. Time to crush it!", photo_url: '')
+goodmessage0 = Gmessage.create!(body: "Ground zero. Time to crush it!", photo_url: 'http://www.highsnobiety.com/wp-content/blogs.dir/12/files/2012/10/nike-just-do-it-wieden-kennedy-0.jpg')
 zero.gmessage = goodmessage0
 
 goodmessage1 = Gmessage.create!(body: "Yes.", photo_url: 'http://trendingcurrentevents.com/wp-content/uploads/2014/12/ur-beautiful-and-youre-going-to-do-great-this-year.png')

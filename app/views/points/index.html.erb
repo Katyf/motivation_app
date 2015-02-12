@@ -1,16 +1,18 @@
 <p id="notice"><%= notice %></p>
-
-
-<h1>Progress</h1>
-<p>What's the status of your task?</p>
-
+<div class="jumbotron">
+      <div class="container">
+        <h1>Progress</h1>
+        <p>What's the status of your task?</p>
+      </div>
+    </div>
 <div>
+<br><br>
 <img class = 'gif' src = 'http://media.giphy.com/media/lXiRtipU3IhXitYVG/giphy.gif'>
 </div>
 
 <p class="lg">
   <% @points.each do |point| %>
-    <% point.statpoint %> __
+    <% point.statpoint %>
     <%= link_to point.statpoint, point %>%
   <% end %>
 </p>
@@ -19,6 +21,6 @@
 
 <br>
 <br>
-<div class="button">
+<div class="btn btn-info">
 <%= link_to 'Back', :back %>
 </div>

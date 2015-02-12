@@ -1,13 +1,21 @@
-<h1>Showing Status</h1>
 <p id="notice"><%= notice %></p>
 
-<p>You are <%= @point.statpoint %>% done...</p>
-
-
+<p class="md">You are <%= @point.statpoint %>% done...</p>
+<br>
+<div>
 <% if current_user.good_cop? %>
-     <%= @point.gmessage.body %>
+     <h1><%= @point.gmessage.body %></h1><br>
      <img src='<%= @point.gmessage.photo_url %>'>
 <% else %>
-     <%= @point.bmessage.body %>
+     <h1><%= @point.bmessage.body %></h1><br>
      <img src='<%= @point.bmessage.photo_url %>'>
 <% end %>
+</div>
+<br><br><br>
+<div class="btn btn-info">
+<%= link_to 'Made some progress?', points_path%>
+</div>
+
+<div class="btn btn-success">
+<a href="http://selfcontrolapp.com/" target="_blank">Help! I'm Hopeless</a>
+</div>

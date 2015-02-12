@@ -11,8 +11,8 @@
 <tbody>
     <% @tasks.each do |task| %>
       <tr>
-        <td><h2><%= link_to task.name, task %></h2></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %> | <%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></td><br><br>
+        <td><h2><%= link_to task.name, task, class: "black" %></h2></td>
+        <td><%= link_to 'Edit', edit_task_path(task), class: "black" %> | <%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' }, class: "black" %></td><br><br>
       </tr>
     <% end %>
   </tbody>

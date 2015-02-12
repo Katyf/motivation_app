@@ -58,3 +58,33 @@ ten.bmessage = message10
 
 goodmessage0 = Gmessage.create!(body: "Yay", photo_url: '')
 zero.gmessage = goodmessage0
+
+goodmessage1 = Gmessage.create!(body: "Yay", photo_url: '')
+zero.gmessage = goodmessage1
+
+goodmessage2 = Gmessage.create!(body: "Yay", photo_url: '')
+zero.gmessage = goodmessage2
+
+goodmessage3 = Gmessage.create!(body: "Yay", photo_url: '')
+zero.gmessage = goodmessage3
+
+goodmessage4 = Gmessage.create!(body: "Yay", photo_url: '')
+zero.gmessage = goodmessage4
+
+goodmessage5 = Gmessage.create!(body: "Yay", photo_url: '')
+zero.gmessage = goodmessage5
+
+goodmessage6 = Gmessage.create!(body: "Yay", photo_url: '')
+zero.gmessage = goodmessage6
+
+goodmessage7 = Gmessage.create!(body: "Yay", photo_url: '')
+zero.gmessage = goodmessage7
+
+goodmessage8 = Gmessage.create!(body: "Yay", photo_url: '')
+zero.gmessage = goodmessage8
+
+goodmessage9 = Gmessage.create!(body: "Yay", photo_url: '')
+zero.gmessage = goodmessage9
+
+goodmessage10 = Gmessage.create!(body: "Yay", photo_url: '')
+zero.gmessage = goodmessage10

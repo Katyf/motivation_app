@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p class="md">You are <%= @point.statpoint %>% done...</p>
-<br>
 <div>
 <% if current_user.good_cop? %>
      <h1><%= @point.gmessage.body %></h1><br>

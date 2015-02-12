@@ -6,7 +6,7 @@
         </h1>
       </div>
     </div>
-    <br><br>
+    <br><br><br>
 
 <h1> You have <%= Time.diff(Chronic.parse(@task.due_by), Chronic.parse('today'), '%d and %h:%m')[:diff] %> left to complete: </h1>
 
@@ -20,8 +20,8 @@
 </p>
 
 
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to 'Edit', edit_task_path(@task), class: "black" %> |
+<%= link_to 'Back', tasks_path, class: "black" %>
 <br><br><br>
 <div class="btn btn-info">
 <%= link_to 'How far along are you?', points_path%>

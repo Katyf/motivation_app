@@ -32,7 +32,7 @@ div .bar {
 .jumbotron {
   background-image: url(http://i.imgur.com/dpccCQB.jpg);
   margin: -30px;
-  height: 220px;
+  height: 210px;
 }
 .left {
   text-align: left;
@@ -71,7 +71,7 @@ div .bar {
 }
 
 a {
-  color: #2F2F2F;
+  color: white;
 }
 
 a:link {
@@ -83,5 +83,15 @@ a:visited {
 }
 
 a:hover {
-    color: white;
+    color: #2F2F2F;
+}
+
+
+.black {
+  color: #222222;
+}
+
+[value="Create Task"] {
+  @extend .btn;
+  @extend .btn-info;
 }

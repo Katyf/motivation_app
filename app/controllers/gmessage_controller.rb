@@ -1,4 +1,4 @@
-class gmessagesController < ApplicationController
+class GmessagesController < ApplicationController
   before_action :set_point
 
   def index

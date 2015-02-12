@@ -2,7 +2,7 @@
 
 <p class="md">You are <%= @point.statpoint %>% done...</p>
 <div>
-<% if current_user.good_cop? %>
+<% if current_user.good_cop? == true %>
      <h1><%= @point.gmessage.body %></h1><br>
      <img src='<%= @point.gmessage.photo_url %>'>
 <% else %>

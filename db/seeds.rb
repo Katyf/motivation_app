@@ -28,7 +28,7 @@ one.bmessage = message1
 message2 = Bmessage.create!(body:"Congratulations, you've dissapointed Oprah", photo_url: 'https://38.media.tumblr.com/ba00108c173aa6b7c34b2a0a1454c5ce/tumblr_n2k0k77Jlp1r5spg1o1_400.gif')
 two.bmessage = message2
 
-message3 = Bmessage.create!(body: "So what you're saying is... you've basically done nothing. Go! Do it! Now!", photo_url: '')
+message3 = Bmessage.create!(body: "I can't even look at you right now. #dissapointed", photo_url: 'http://s3-ec.buzzfed.com/static/enhanced/web05/2012/2/21/16/enhanced-buzz-wide-6411-1329859394-2.jpg')
 three.bmessage = message3
 
 message4 = Bmessage.create!(body:'You make the MBTA look like', photo_url: '')
@@ -40,8 +40,7 @@ five.bmessage = message5
 message6 = Bmessage.create!(body:'Get off the internet and do your damn work. Go. Now.', photo_url: '')
 six.bmessage = message6
 
-message7 = Bmessage.create!(body:"This is almost a good look. Just like you're almost done", photo_url: 'https://pbs.twimg.com/
-  media/B3yd_TRCUAAU7qG.jpg:large')
+message7 = Bmessage.create!(body:"This is almost a good look. Just like you're almost done.", photo_url: 'http://31.media.tumblr.com/fc6a33afa5bd358274891d1cfae8d40a/tumblr_ncsqt3r5GZ1qecufho1_500.jpg')
 seven.bmessage = message7
 
 message8 = Bmessage.create!(body:'Tick tock...', photo_url: 'http://s3-ec.buzzfed.com/static/2013-12/enhanced/webdr02/9/21/anigif_enhanced-buzz-17874-1386641829-6.gif')

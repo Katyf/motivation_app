@@ -1,28 +1,10 @@
-== README
+# motivation_app
+== Motivation App (WDI Project 1)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+== Features
+* Users
+* Create, Edit, and Destroy Tasks
+* Choose between two modes: inspiration or tough love
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== Product Description
+* Motivator is a rails app which allows you to create tasks, shows you how long you have to complete it, and then motivates you to complete your task.
